@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(160, 185, 255);
+    font-family: sans-serif;
+}
+input[type="button"]{
+  color: #14065a;
+  background-color: #5a94ff;
+  border-radius: 0.5%;
+  border-color: rgb(45, 255, 227);
+  border-radius: 3px;
+}
+#div{
+    color: #14065a;
+}
+input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+select{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+table{
+  background-color: rgb(161, 195, 224);
+}

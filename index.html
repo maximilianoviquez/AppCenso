@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Censo Uruguay 2023!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/clases.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+<body>
+    <div id="div">
+        <h1>Censo Uruguay 2023</h1>
+        <h2>Bienvenido al sistema de Censo 2023!</h2>
+        <h2>Escoja su Perfil:</h2>
+        <nav>
+            <input type="button" value="Censista" id="btnCensista">
+            <input type="button" value="Invitado" id="btnInvitado">
+        </nav>
+    </div>
+    <hr>
+    <div id="divInicial">
+        <h2>Registro de usuario: </h2>
+        <form id="formRegistro">
+            <input type="text" placeholder="Ingrese el Nombre" id="nombre">
+            <input type="text" placeholder="Ingrese el usuario" id="usuario">
+            <input type="password" placeholder="Ingrese la Constraseña" id="pass">
+            <input type="button" value="Registrar" id="btnRegistrar">
+        </form>
+        <hr>
+        <h2>Login de Usuario</h2>
+        <input type="text" placeholder="Ingrese el usuario" id="usuarioLogin" >
+        <input type="password" placeholder="Ingrese la Constraseña" id="passLogin">
+        <input type="button" value="Acceder" id="btnLogin"> <br> <br>
+        <input type="button" value="Salir" id="salirLogin">
+    </div>
+    <div id="usuarioLogeado">
+        <h2>Menu Perfil Censista</h2>
+        <input type="button" value="Salir" id="btnLogout"> <br>
+        <hr>
+    </div>    
+    <div id="div2">
+        <form id="formCedulaPC">
+            <h3>Consulta de Censos y/o Ingreso de un nuevo Censo</h3>
+            <label>Ingrese un Nuevo Censo<input type="button" value="Nuevo" id="nuevoPC"></label><br><br>
+            <label for="censoAsignadoPC">Elija un Censo asignado
+                <select id="censoAsignadoPC">
+                </select>
+            </label>
+            <input type="button" value="Desplegar" id="btnDesplegarCIPC">
+        </form>
+        <div id="div22">    
+            <form id="formCensoPC">
+                <h3>Consulta o Ingreso: </h3>
+                <label for="cedulaPC" id="labelCI">Cedula:</label><input type="text" id="cedulaPC"> 
+                <label>Nombre: <input type="text" id="nombrePC"></label><br>
+                <label>Apellido: <input type="text" id="apellidoPC"></label><br>
+                <label>Edad: <input type="number" id="edadPC"></label><br>
+                <label for="departamentosPC">Departamento: </label> 
+                <select id="departamentosPC">
+                </select><br>
+                <label for="ocupacionPC">Ocupacion:</label> 
+                <select id="ocupacionPC">
+                </select><br>
+                <input type="button" value="Ingresar" id="btnIngresarPC">
+                <input type="button" value="Editar" id="btnEditarPC">
+                <input type="button" value="Enviar Edicion" id="btnEdicionPC">
+                <br>
+                <div id="censoFinalizado">
+                    <label>Estado: ¿Censo Finalizado?</label> <br><br>
+                    <label>Si, Censo Finalizado<input type="radio" id="radioSi" name="finalizado"></label><br> <br>
+                    <label>NO está finalizado <input type="radio" id="radioNo" name="finalizado" checked></label> <br>
+                    <p id="usuarioAutorizo">Usuario Censista: </p>  <br> 
+                </div>
+                <input type="button" value="Cancelar Operacion" id="btnCancelPC">
+                <input type="button" value="Finalizar"  id="btnFinalizarCenso">
+            </form>
+        </div>
+        <hr>    
+    </div>
+    <div id="div3">
+        <form id="formReasignar">
+            <h3>Reasignacion de Censos</h3>
+            <h4>Elija censo a reasignar: </h4>   
+            <label for="selectCensos">Censos asignados a su usuario: 
+                <select id="selectCensos">
+                </select>
+            </label><br><br>
+            <label for="censistasDisponibles">Censistas Disponibles: 
+                <select id="censistasDisponibles">
+                </select>
+            </label>
+            <input type="button" value="Asignar" id="btnAsignarCensista">
+        </form>    
+    </div>
+    <div id="div4">
+        <hr>
+        <h3>Visualizar Informacion Estadistica</h3>
+        <input type="button" value="Mostrar" id="mostrarInfoCenso">
+        <br>
+        <p id="personasCensadas">Total de Personas censadas hasta el momento: </p>
+        <p id="personasPendientes">Porcentaje de Personas Pendientes de validar:</p>
+        <br>
+        <label for="departamentosTablaVE">Seleccione un Departamento: </label>
+        <select id="departamentosTablaVE">
+        </select>
+        <input type="button" value="Visualizar Tabla" id="btnCensosPorDepartamento">
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Personas Censadas en el Departamento</th>
+                    <th>Menores de Edad (%)</th>
+                    <th>Mayores de Edad (%)</th>
+                </tr>
+            </thead>
+            <tbody id="tablaVisualizarInfo">
+                <tr><td colspan="3">Sin datos</td></tr>
+            </tbody>
+        </table>
+        <br>       
+    </div>
+    <div id="div5">
+        <h2>Perfil Invitado</h2>
+        <input type="button" value="Salir" id="salirInvitado">
+        <hr>
+        <h4>Si usted ya completó el censo, puede buscar su cédula y editar sus datos!</h3>
+        <form id="formBuscarPI">    
+            <label>Cedula de Identidad: <input type="text" id="ciBuscarInvitado"></label>
+            <input type="button" value="Buscar" id="btnBuscarPI"><br>
+        </form>    
+        <form id="formCensoPI">
+            <hr>
+            <h4>Complete el formulario: </h4>
+            <label>Cedula de Identidad: <input type="text" id="ciInvitado"></label><br>
+            <label>Nombre: <input type="text" id="nombrePI"></label><br>
+            <label>Apellido: <input type="text" id="apellidoPI"></label><br>
+            <label>Edad: <input type="number" id="edadPI"></label><br>
+            <label for="departamentosPI">Departamento:</label> 
+            <select id="departamentosPI">
+            </select><br>
+            <label for="ocupacionPI">Ocupacion: </label>
+            <select id="ocupacionPI">
+            </select><br><br>
+            <input type="button" value="Enviar Formulario" id="btnIngresarPI"><br>
+            <input type="button" value="Editar" id="btnEditarPI"><br>
+            <input type="button" value="Enviar Edicion" id="btnEnviarPI"><br>
+            <input type="button" value="Cancelar Edicion" id="btnCancelEditPI"><br>
+        </form> 
+        <hr> 
+        <h3>Asignacion de Censista</h3>
+        <p>Su censista asignado es: <p>
+        <p id="pCensistaAsignado">Nombre: </p>
+        <hr>
+        <form id="autoEliminarDatos">   
+            <h3>Eliminar datos para el censo</h3>
+            <label>Ingrese su Cédula 
+                <input type="text" id="CiEliminarCenso">
+            </label>
+            <input type="button" value="Buscar" id="btnBuscarEliminarCenso"><br>
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Edad</td>
+                        <td>Departamento</td>
+                        <td>Ocupacion</td>
+                    </tr>
+                </thead>
+                <tbody id="eliminarCIcenso">
+                    <tr>
+                        <td colspan="6">Sin Datos</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Para eliminar sus datos presione el boton "Eliminar" </p>
+            <input type="button" value="Eliminar" id="btnEliminarDatos"><br>
+            <input type="button" value="Cancelar Operacion" id="btnCancelarEliminarDatos"><br>
+        </form>  
+        <hr>
+        <div id="listaCensados">
+            <h3>Lista de Censados: </h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Departamento</th>
+                        <th>Estudian</th>
+                        <th>No Trabajan</th>
+                        <th>Dependientes/Independientes</th>
+                        <th>Total de censados (%)</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaListaCensados">    
+                </tbody>
+            </table><br>
+            <hr>
+        </div>    
+    </div>
+
+
+    
+</body>
+</html>
